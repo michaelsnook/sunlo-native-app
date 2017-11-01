@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { StackNavigator } from 'react-navigation';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 
 export default class LoginScreen extends Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={[styles.container, styles.homeScreen, styles.minPadding, {flex: 1}]}>
         <Text
@@ -21,7 +26,7 @@ export default class LoginScreen extends Component {
           buttonStyle={{backgroundColor: 'white', width: '100%'}}
           textStyle={{color: '#025aa5'}}
           title='Log in'
-          onPress={ () => console.log('logging in') }
+          onPress={() => navigate('Home', {})}
         />
         <Button
           buttonStyle={{width: '100%', backgroundColor: 'transparent'}}
