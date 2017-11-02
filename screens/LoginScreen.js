@@ -5,34 +5,22 @@ import { Button } from 'react-native-elements';
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'Log in',
   };
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={[styles.container, styles.homeScreen, styles.minPadding, {flex: 1}]}>
-        <Text
-          style={[styles.title, styles.whiteText]}
-        >
-          Welcome to
-        </Text>
-        <Text
-          style={[styles.title, styles.whiteText, {fontWeight: 'bold'}]}
-        >
-          Sunlo
-        </Text>
+      <View style={[styles.container, styles.minPadding, {flex: 1}]}>
+        <Text>Your email</Text>
+        <Text>snook@sunlo.co</Text>
+        <Text>Your password</Text>
+        <Text>abc-password-time</Text>
         <Button
           style={{marginTop: 30, marginBottom: 20}}
-          buttonStyle={{backgroundColor: 'white', width: '100%'}}
-          textStyle={{color: '#025aa5'}}
+          buttonStyle={{backgroundColor: '#025aa5', width: '100%'}}
+          textStyle={{color: 'white'}}
           title='Log in'
-          onPress={() => navigate('Home', {})}
-        />
-        <Button
-          buttonStyle={{width: '100%', backgroundColor: 'transparent'}}
-          title='Sign up'
-          onPress={ () => console.log('signing up') }
-          underlayColor='transparent'
+          onPress={() => navigate('Home')}
         />
       </View>
     );
@@ -48,18 +36,5 @@ const styles = StyleSheet.create({
   },
   minPadding: {
     padding: 5,
-  },
-  homeScreen: {
-    backgroundColor: '#025aa5',
-    flex: 1,
-  },
-  whiteText: {
-    color: 'white',
-  },
-  title: {
-    fontSize: 30,
-    textAlign: 'center',
-    marginLeft: 20,
-    marginRight: 20,
   },
 });
