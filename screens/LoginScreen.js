@@ -1,20 +1,52 @@
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 
 export default class LoginScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: null,
+      password: null,
+    };
+  }
   static navigationOptions = {
     title: 'Log in',
   };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={[styles.container, styles.minPadding, {flex: 1}]}>
+      <View
+        style={[styles.container, styles.minPadding, {flex: 1}]}>
         <Text>Your email</Text>
-        <Text>snook@sunlo.co</Text>
-        <Text>Your password</Text>
-        <Text>abc-password-time</Text>
+        <TextInput
+          value={this.state.email}
+          placeholder='snook-test@sunlo.co'
+          autoFocus={true}
+          keyboardType='email-address'
+          returnKeyType='next'
+          autoCapitalize='none'
+          autoCorrect={false}
+          style={{height: 40, width: '80%', borderColor: 'gray', textAlign: 'center'}}
+          underlineColorAndroid='#025aa5'
+          onChangeText={(email) => this.setState({email})}
+        />
+      <Text>Your password</Text>
+        <TextInput
+          {...this.props}
+          value={this.state.password}
+          placeholder='abc-strong-password'
+          secureTextEntry={true}
+          returnKeyType='done'
+          autoCapitalize='none'
+          autoCorrect={false}
+          style={{height: 40, width: '80%', borderColor: 'gray', textAlign: 'center'}}
+          underlineColorAndroid='#025aa5'
+          onChangeText={(password) => this.setState({password})}
+
+        />
         <Button
           style={{marginTop: 30, marginBottom: 20}}
           buttonStyle={{backgroundColor: '#025aa5', width: '100%'}}
