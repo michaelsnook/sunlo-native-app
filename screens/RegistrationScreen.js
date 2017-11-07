@@ -43,24 +43,25 @@ export default class RegistrationScreen extends Component {
         <Text style={{marginBottom:15}}>Your email</Text>
         <TextInput
           value={this.state.email}
-          placeholder='snook-test@sunlo.co'
+          placeholder='sample@sunlo.co'
           keyboardType='email-address'
           returnKeyType='next'
           autoCapitalize='none'
           autoCorrect={false}
-          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: 'gray', textAlign: 'center'}}
+          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: '#025aa5', textAlign: 'center'}}
+          underlineColorAndroid='transparent'
           onChangeText={(email) => this.setState({email})}
         />
       <Text style={{marginTop:30, marginBottom: 15}}>Your password</Text>
         <TextInput
-          {...this.props}
           value={this.state.password}
           placeholder='abc-strong-password'
           secureTextEntry={true}
           returnKeyType='done'
           autoCapitalize='none'
           autoCorrect={false}
-          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: 'gray', textAlign: 'center'}}
+          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: '#025aa5', textAlign: 'center'}}
+          underlineColorAndroid='transparent'
           onChangeText={(password) => this.setState({password})}
         />
         <Button

@@ -29,21 +29,20 @@ export default class LoginScreen extends Component {
           returnKeyType='next'
           autoCapitalize='none'
           autoCorrect={false}
-          style={{height: 40, width: '80%', borderColor: 'gray', textAlign: 'center'}}
-          underlineColorAndroid='#025aa5'
+          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: '#025aa5', textAlign: 'center'}}
+          underlineColorAndroid='transparent'
           onChangeText={(email) => this.setState({email})}
         />
       <Text>Your password</Text>
         <TextInput
-          {...this.props}
           value={this.state.password}
           placeholder='abc-strong-password'
           secureTextEntry={true}
           returnKeyType='done'
           autoCapitalize='none'
           autoCorrect={false}
-          style={{height: 40, width: '80%', borderColor: 'gray', textAlign: 'center'}}
-          underlineColorAndroid='#025aa5'
+          style={{height: 40, width: '80%', borderBottomWidth: 1, borderBottomColor: '#025aa5', textAlign: 'center'}}
+          underlineColorAndroid='transparent'
           onChangeText={(password) => this.setState({password})}
 
         />
